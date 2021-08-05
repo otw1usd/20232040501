@@ -111,23 +111,23 @@ var map;
 
                     '<table style="width:100%">'+
                     "<tr>" +
-                    "<th> <button>Gantt Chart</button></th>"+
+                    // "<th> <button>Gantt Chart</button></th>"+
                     "<th><button>3D Virtual Tour</button></th>"+
                     "</tr>"+
 
                     "<tr>" +
-                    "<th><button>%Progres Rinci</button></th>"+
-                    "<th><button>Foto Digital</button></th>"+
+                    // "<th><button>%Progress </button></th>"+
+                    "<th><button>Field Photo</button></th>"+
                     "</tr>"+
 
-                    "<tr>" +
-                    "<th><button>%Biaya Rinci</button></th>"+
-                    "<th><button>Video</button></th>"+
-                    "</tr>"+
+                    // "<tr>" +
+                    // "<th><button>%Cost</button></th>"+
+                    // "<th><button>Video</button></th>"+
+                    // "</tr>"+
 
                     "<tr>" +
-                    "<th><button>Construction Drawing</button></th>"+
-                    "<th><button>Project Report</button></th>"+
+                    "<th><button onclick='gamtekSaya()'>Construction Drawing</button></th>"+
+                    // "<th><button>Project Report</button></th>"+
                     "</tr>"+
                     
                     
@@ -139,7 +139,125 @@ var map;
                     "</div>" +
                     "</div>";
 
-                
+                const content5 = 
+                    '<div id="content">' +
+                    '<div id="siteNotice">' +
+                    "</div>" +
+                    '<h1 id="firstHeading" class="firstHeading">KM-299</h1>' +
+                    
+                    
+                    '<div id="bodyContent">' +
+                    
+                    '<table style="width:100%">'+  
+                    "<tr>" +
+                    "<th> <b> Progres </b></th>"+
+                    "<th>:</th>"+
+                    "<th>100%</th>"+
+                    "</tr>"+
+                    // "<tr>"+
+                    // "<th> <b>Pier</b></th>"+
+                    // "<th>:</th>"+
+                    // "<th>0%</th>"+
+                    // "</tr>"+
+                    // "<tr>"+
+                    // "<th> <b>Girder</b></th>"+
+                    // "<th>:</th>"+
+                    // "<th>0%</th>"+
+                    // "</tr>"+
+                    "</table>"+
+
+                    '<h6></h6>'+
+
+                    '<table style="width:100%">'+
+                    "<tr>" +
+                    // "<th> <button>Gantt Chart</button></th>"+
+                    "<th><button>3D Virtual Tour</button></th>"+
+                    "</tr>"+
+
+                    "<tr>" +
+                    // "<th><button>%Progress </button></th>"+
+                    "<th><button>Field Photo</button></th>"+
+                    "</tr>"+
+
+                    // "<tr>" +
+                    // "<th><button>%Cost</button></th>"+
+                    // "<th><button>Video</button></th>"+
+                    // "</tr>"+
+
+                    "<tr>" +
+                    "<th><button onclick='gamtekSaya()'>Construction Drawing</button></th>"+
+                    // "<th><button>Project Report</button></th>"+
+                    "</tr>"+
+                    
+                    
+                    
+                    
+                    "</table>"+
+
+
+                    "</div>" +
+                    "</div>";
+
+                    const content6 = 
+                    '<div id="content">' +
+                    '<div id="siteNotice">' +
+                    "</div>" +
+                    '<h1 id="firstHeading" class="firstHeading">KM-301</h1>' +
+                    
+                    
+                    '<div id="bodyContent">' +
+                    
+                    '<table style="width:100%">'+  
+                    "<tr>" +
+                    "<th> <b> Progres </b></th>"+
+                    "<th>:</th>"+
+                    "<th>100%</th>"+
+                    "</tr>"+
+                    // "<tr>"+
+                    // "<th> <b>Pier</b></th>"+
+                    // "<th>:</th>"+
+                    // "<th>0%</th>"+
+                    // "</tr>"+
+                    // "<tr>"+
+                    // "<th> <b>Girder</b></th>"+
+                    // "<th>:</th>"+
+                    // "<th>0%</th>"+
+                    // "</tr>"+
+                    "</table>"+
+
+                    '<h6></h6>'+
+
+                    '<table style="width:100%">'+
+                    "<tr>" +
+                    // "<th> <button>Gantt Chart</button></th>"+
+                    "<th><button>3D Virtual Tour</button></th>"+
+                    "</tr>"+
+
+                    "<tr>" +
+                    // "<th><button>%Progress </button></th>"+
+                    "<th><button>Field Photo</button></th>"+
+                    "</tr>"+
+
+                    // "<tr>" +
+                    // "<th><button>%Cost</button></th>"+
+                    // "<th><button>Video</button></th>"+
+                    // "</tr>"+
+
+                    "<tr>" +
+                    "<th><button onclick='gamtekSaya()'>Construction Drawing</button></th>"+
+                    // "<th><button>Project Report</button></th>"+
+                    "</tr>"+
+                    
+                    
+                    
+                    
+                    "</table>"+
+
+
+                    "</div>" +
+                    "</div>";
+
+
 
                     
 
@@ -163,17 +281,17 @@ var map;
                         "img/hotspot.png",
                         25,
                         33,
-                        content4,
+                        content5,
                     ],
 
 
                     [
-                        "DEPO TEGALUAR GD.1",
+                        "KM-301",
                         -6.960370735383669, 107.74107971756642,
                         "img/hotspot.png",
                         25,
                         33,
-                        '<button onclick="gamtekSaya()"> <p>View Construction Drawing</p> </button>',
+                        content6,
                     ],              
 
                   
