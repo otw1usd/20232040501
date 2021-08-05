@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+
+    <link rel="icon" href="img/amatilogo.png" sizes="32x32"/>
+    <link rel="icon" href="img/amatilogo.png" sizes="192x192"/>
+    <link rel="apple-touch-icon-precomposed" href="img/amatilogo.png"/>
+    <meta name="msapplication-TileImage" content="img/amatilogo.png"/>
+
+
+
+    <title>AMATI/KCIC Depo Tegal Luar</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css">      
+    <!-- Leaflet (JS/CSS) -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" /> -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    
+    <!-- Leaflet-GoogleMutant -->
+    <script src="https://unpkg.com/leaflet.gridlayer.googlemutant@0.10.0/Leaflet.GoogleMutant.js"></script>
+    <!-- Leaflet-Pegman -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-pegman/@latest/leaflet-pegman.css" />
+    <script src="https://unpkg.com/leaflet-pegman/@latest/leaflet-pegman.js"></script>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <!-- <script src="https://unpkg.com/interact.js@1.2.8/dist/interact.min.js"></script> -->
+
+</head>
+
+<body>
+    <div class="infocontainer">
+        <h2> High Speed Innercity Railway Project </h2>
+        <h6></h6>
+        <h6> Progres total: </h6>
+        <h4><span class="blinking"> 50 % </span></h4>
+        <h6> Pengeluaran total: </h6>
+        <h6></h6>
+        <h4><span class="blinking"> 75 % </span></h4>
+    </div>
+
+    <button class="button2 popup" onclick="myFunction()">S-Curve
+        <iframe class="popuptext" id="myPopup" width="435" height="200" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRj4oF9at_a656n6W02H8uGURmoQ2N8ZOoKQDeHyAq_AtWiuTkQeKngmqfdUDnmlufmkGG47q4Ex-fi/pubchart?oid=1071236399&amp;format=interactive"></iframe>
+    </button>
+
+
+     <div id="floating-panel">
+        <input type="radio" name="date" value="none" onclick="toggleOverlay(this)" /> Pre-konstruksi<br />
+        <input type="radio" name="date" value="01_02_21" onclick="toggleOverlay(this)" /> Feb 2021<br />
+        <input type="radio" name="date" value="01_03_21" onclick="toggleOverlay(this)" /> March 2021<br />
+        <input type="radio" name="date" value="01_04_21" onclick="toggleOverlay(this)" /> April 2021<br />
+        <input type="radio" name="date" value="01_05_21" onclick="toggleOverlay(this)" /> May 2021<br />
+        <input type="radio" name="date" value="01_06_21" onclick="toggleOverlay(this)" /> June 2021<br />
+    </div>
+
+     <button class="button3" onclick="gamtekSaya()" target="">Project Information</button>
+     <button class="button4" onclick="window.location.href='';" target="">Zonasi</button>
+     <button class="button7" onclick="window.location.href=" target="">Comment Section</button>
+     <!-- <button class="button8" onclick="window.location.href='';" target=""> 360 View</button> -->
+
+
+ <!-- Fitur-fitur tersembunyi -->
+ <!-- GAMTEK -->
+    <div class="gamtek" id ='gamtek'>
+        <div class="popupgamtek" id="daftarGamtekSaya">
+            <img src="drawing/list/list-Page1.png" alt="Page1" id="Page1" class="list">
+            <img src="drawing/list/list-Page2.png" alt="Page2" id="Page2" class="list">
+            <img src="drawing/list/list-Page3.png" alt="Page3" id="Page3" class="list">
+            <img src="drawing/list/list-Page4.png" alt="Page4" id="Page4" class="list">
+        </div>
+    </div>
+    
+
+    
+
+    <div class="gamtekfs">
+        <img class="gamtekfsbefore" src="drawing/Original PNG/z1-Page1.png">
+        <img class="gamtekfslogobefore" src="img/z2in.png">
+        <img class="gamtekfslogobackbefore" src="img/back.png">
+    </div>
+
+    <div class="gamtekz2">
+        <iframe class="gamtekz2htmlbefore" src="drawing/Page2/index.html" >
+        </iframe>
+    </div>
+
+
+    
+
+    <a href="index.html" >
+        <img id="logo" src="img/logo.png">
+    </a>
+
+    <script 
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbUFZJhvcv_dLJIxGJrdfpTE3YLhupiVA">
+    </script>
+
+           
+    <script src="maps.js"></script>
+    <script src="contentbutton.js"></script> 
+    
+
+
+    <script>
+      var map = L.map('map');
+      map.setView(new L.LatLng(45, 9.5), 5);
+
+      var OpenTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+        maxZoom: 17,
+        attribution: 'Map data: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)',
+        opacity: 0.90
+        });
+      OpenTopoMap.addTo(map);
+
+      var pegmanControl = new L.Control.Pegman({
+        position: 'bottomright', // position of control inside the map
+        theme: "leaflet-pegman-v3-small", // or "leaflet-pegman-v3-default" 
+      });
+      pegmanControl.addTo(map);
+    </script>
+
+
+    <script> 
+        const omg = document.querySelector('.gamtek');
+        const omgomgfs=document.querySelector('.gamtekfslogobefore');
+        const gamtekFullScreen=document.querySelector('.gamtekfsbefore');
+        const gamtekz2html=document.querySelector('.gamtekz2htmlbefore');
+        const logoback = document.querySelector('.gamtekfslogobackbefore');
+        window.z2OnScreen = 0 ;
+        window.fsOnScreen = 0 ;
+        
+
+
+            function myFunction() {
+             var popup = document.getElementById("myPopup");
+              popup.classList.toggle("show");
+
+              
+            };
+
+            
+            function gamtekSaya() {
+                var gamtek = document.getElementById("daftarGamtekSaya");
+                gamtek.classList.toggle("buka");
+                
+                
+            }          ;
+
+        omg.addEventListener('click' , function(e){
+            
+            
+            
+
+            //buat pencet list untuk fs tapi dari layar 0, atau buat pencet list tapi lagi z2
+                if(window.fsOnScreen === 0){
+                    path="drawing/Original PNG/z1-"+e.target.id+".png";
+                    gamtekFullScreen.src=path;                
+                    window.idOnScreen = e.target.id ;
+
+                    //buat pencet list tapi lagi z2
+                        if (window.z2OnScreen === 1){
+                            
+                            
+                            path="drawing/"+window.idOnScreen+"/index.html";
+                            gamtekz2html.src=path; 
+
+                        }
+
+                        //buat pencet list untuk fs tapi dari layar 0
+                        else{
+                            window.fsOnScreen=1;
+                            gamtekFullScreen.classList.remove("gamtekfsbefore");
+
+                            gamtekFullScreen.classList.add("gamtekfsafter");
+                            omgomgfs.classList.toggle("gamtekfslogoafter");
+                            logoback.classList.toggle("gamtekfslogobackafter");
+                        };
+                    }
+
+                // buat kalo dari layar fs ganti page
+                else if(window.fsOnScreen === 1){
+                    path="drawing/Original PNG/z1-"+e.target.id+".png";
+                    gamtekFullScreen.src=path;
+
+                }
+                
+
+                
+            });
+
+        omgomgfs.addEventListener('click' , function(e){
+
+            if (window.z2OnScreen === 0){
+                    window.z2OnScreen =1 ;
+                    
+
+                    omgomgfs.src="img/z2out.png";
+
+                    gamtekFullScreen.classList.remove("gamtekfsafter");
+                    gamtekz2html.classList.toggle("gamtekz2htmlbefore");
+
+                    path="drawing/"+window.idOnScreen+"/index.html";
+                    gamtekz2html.src=path;
+
+                    gamtekz2html.classList.toggle("gamtekz2htmlafter");
+                    gamtekFullScreen.classList.add("gamtekfsbefore");
+                                                    window.fsOnScreen=0;
+                                                    logoback.classList.remove("gamtekfslogobackafter");
+                                                    logoback.classList.add("gamtekfslogobackbefore");
+                    
+                    
+                }
+                else {
+                    window.z2OnScreen =0 ;
+
+                    gamtekFullScreen.classList.toggle("gamtekfsbefore");
+                    gamtekz2html.classList.toggle("gamtekz2htmlafter");
+
+                    path="drawing/"+window.idOnScreen+"/index.html";
+                    gamtekz2html.src=path;
+
+                    gamtekz2html.classList.toggle("gamtekz2htmlbefore");
+                    gamtekFullScreen.classList.toggle("gamtekfsafter");
+                                                    window.fsOnScreen=1;
+                                                    logoback.classList.remove("gamtekfslogobackbefore");
+                                                    logoback.classList.add("gamtekfslogobackafter");
+                    omgomgfs.src="img/z2in.png";
+                    
+
+                    ;
+
+                }
+                    
+
+                
+            });
+
+        logoback.addEventListener('click' , function(e){
+            gamtekFullScreen.classList.toggle("gamtekfsafter");
+            gamtekFullScreen.classList.toggle("gamtekfsbefore");
+            window.fsOnScreen=0;
+            logoback.classList.remove("gamtekfslogobackafter");
+            logoback.classList.add("gamtekfslogobackbefore");
+            omgomgfs.classList.remove("gamtekfslogoafter");
+            omgomgfs.classList.add("gamtekfslogobefore");
+            
+
+        });
+
+
+                
+                
+
+                  
+    
+           
+             
+    </script>
+
+        <div id="map"></div>
+    </body>
+</html>
