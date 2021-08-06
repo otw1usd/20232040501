@@ -56,7 +56,6 @@ body {
  .floating-panel {
    text-align: left;
    font-size: 0.8rem;
-   border-right:solid 1px;
    border-bottom:solid 1px;
    padding: 0.8rem;
  }
