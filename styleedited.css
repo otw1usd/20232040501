@@ -37,7 +37,7 @@ body {
 
 
  .infocontainer {
-   position: fixed;
+   position: absolute;
    z-index: 10;
    border-right: solid 1px;
  }
@@ -188,7 +188,7 @@ body {
    -ms-user-select: none;
    user-select: none;
       z-index: 0;
-   height:90%;
+   height:100%;
    left:0;
  }
 
@@ -197,7 +197,7 @@ visibility: hidden;
    background-color: #fff;
    z-index: -15;
    border-radius: 6px;
-   height:50%;
+   height:100%;
  }
 
  /* Popup arrow */
