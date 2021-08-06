@@ -194,6 +194,7 @@
    z-index: -15;
    border-radius: 6px;
    position: absolute;
+   height:20rem;
  }
 
  /* Popup arrow */
