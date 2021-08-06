@@ -37,9 +37,10 @@ body {
 
 
  .infocontainer {
-   position: absolute;
+   position: fixed;
    z-index: 10;
    border-right: solid 1px;
+   height:100%;
  }
 
 
