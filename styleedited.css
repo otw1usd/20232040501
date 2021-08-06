@@ -2,7 +2,6 @@ body {
    height: 100%;
    padding: 0;
    overflow-y: auto;
-   padding-bottom: 20px;
  }
 
  #logo-kcic {
@@ -14,7 +13,7 @@ body {
  }
 
  #logo {
-   position: absolute;
+   position: fixed;
    left: 0;
    bottom: 0;
    z-index: 10;
@@ -22,7 +21,8 @@ body {
  }
 
  #map {
-   position: absolute;
+   position: fixed !important;
+   top:0;
    left:16.66667%;
    height: 100%;
    width: 83.3333%;
@@ -36,9 +36,8 @@ body {
 
  .infocontainer {
    position: static;
-
    background-color: rgba(255, 255, 255, 1);
-   z-index: 1;
+   z-index: 10;
    border-right: solid 1px;
    background-color: #F9F7F7;
  }
@@ -179,23 +178,26 @@ body {
  }
 
  .gamtek {
-   position: static;
+   visibility: hidden;
+   position: absolute;
    margin:0;
    cursor: pointer;
    -webkit-user-select: none;
    -moz-user-select: none;
    -ms-user-select: none;
    user-select: none;
+      z-index: 0;
+   height:50%;
+   top:41.5rem;
 
  }
 
- .gamtek .popupgamtek {
-   visibility: hidden;
+.popupgamtek {
+visibility: hidden;
    background-color: #fff;
    z-index: -15;
    border-radius: 6px;
-   position: absolute;
-   height:20rem;
+   height:50%;
  }
 
  /* Popup arrow */
@@ -205,6 +207,7 @@ body {
    border-width: 5px;
    border-style: solid;
    border-color: #555 transparent transparent transparent;
+      height:10rem;
  }
 
  /* Toggle this class - hide and show the popup */
@@ -268,11 +271,9 @@ body {
  }
 
  .gamtekfs .gamtekfslogobefore {
-   visibility: hidden;
-   right: 120px;
-   top: 20px;
+   /* visibility: hidden; */
    position: absolute;
-   width: 20px;
+   width: 0;
    z-index: -11;
  }
 
@@ -288,11 +289,9 @@ body {
  }
 
  .gamtekfs .gamtekfslogobackbefore {
-   visibility: hidden;
-   right: 140px;
-   top: 20px;
+   /* visibility: hidden; */
    position: absolute;
-   width: 20px;
+   width: 0;
    z-index: -11;
  }
 
@@ -309,23 +308,26 @@ body {
 
  .gamtekfsbefore {
    position: absolute;
-   visibility: hidden;
+   /* visibility: hidden; */
    z-index: -12;
+   width: 0;
  }
 
  .gamtekfsafter {
    position: absolute;
    visibility: visible;
    z-index: 11;
-   height: 100%;
-   right: 100px;
+   max-width: 100%;
+   height: auto;
+   margin:auto;
  }
 
  .gamtekz2 {}
 
  .gamtekz2 .gamtekz2htmlbefore {
    position: absolute;
-   visibility: hidden;
+   /* visibility: hidden; */
+   width: 0;
  }
 
  .gamtekz2 .gamtekz2htmlafter {
@@ -336,6 +338,7 @@ body {
    right: 100px;
    width: 1327px;
  }
+
 
 
  h1 {

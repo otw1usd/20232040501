@@ -23,12 +23,16 @@
 
   <title>AMATI/KCIC Depo Tegal Luar</title>
   <meta charset="utf-8" />
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styleedited.css">
   <!-- Leaflet (JS/CSS) -->
   <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" /> -->
 </head>
 
 <body>
+  <a href="index.html">
+    <img id="logo" src="img/logo.png">
+  </a>
+
   <div class="infocontainer col-2">
     <img id="logo-kcic" src="img/logo-kcic.png" alt="Logo KCIC">
     <h1> Kereta Cepat Jakarta Bandung Project </h1>
@@ -72,28 +76,18 @@
           </div>
         </div>
         <!-- Gamtek awal -->
-        <div class="gamtek" id='gamtek'>
-          <div class="popupgamtek col-12" id="daftarGamtekSaya">
+        <div class="gamtek col-2" id='gamtek'>
+          <div class="popupgamtek" id="daftarGamtekSaya">
             <img src="drawing/list/list-Page1.png" alt="Page1" id="Page1" class="list">
             <img src="drawing/list/list-Page2.png" alt="Page2" id="Page2" class="list">
             <img src="drawing/list/list-Page3.png" alt="Page3" id="Page3" class="list">
             <img src="drawing/list/list-Page4.png" alt="Page4" id="Page4" class="list">
           </div>
         </div>
+        <!-- Fitur-fitur tersembunyi -->
+        <!-- GAMTEK -->
+
   </div>
-
-
-
-
-
-
-  <!-- Fitur-fitur tersembunyi -->
-  <!-- GAMTEK -->
-
-
-
-
-
   <div class="gamtekfs">
     <img class="gamtekfsbefore" src="drawing/Original PNG/z1-Page1.png">
     <img class="gamtekfslogobefore" src="img/z2in.png">
@@ -104,13 +98,6 @@
     <iframe class="gamtekz2htmlbefore" src="drawing/Page2/index.html">
     </iframe>
   </div>
-
-
-
-
-  <a href="index.html">
-    <img id="logo" src="img/logo.png">
-  </a>
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbUFZJhvcv_dLJIxGJrdfpTE3YLhupiVA">
   </script>
@@ -267,9 +254,10 @@
     });
   </script>
 
-  <div class="col-2" id="map">
+  <div id="map">
 
   </div>
+
 </body>
 
 </html>
