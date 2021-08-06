@@ -36,15 +36,15 @@ var map;
                         return ['./01_03_21/',
                 zoom , '/' , coord.y , '/' , coord.x , '.png']
                      .join('');
-                
+
                     },
                     tileSize: new google.maps.Size(256, 256)
                 });
 
                 map.overlayMapTypes.push(imageMapType);
 
-                
-                    
+
+
             }
 
 
@@ -68,7 +68,7 @@ var map;
                         return [path,
                     zoom + "/" + coord.y + "/" + coord.x + ".png"]
                      .join("");
-                
+
                 },
                     tileSize: new google.maps.Size(256, 256)
             });
@@ -78,18 +78,18 @@ var map;
 
 
 
-               
 
-                const content4 = 
+
+                const content4 =
                     '<div id="content">' +
                     '<div id="siteNotice">' +
                     "</div>" +
                     '<h1 id="firstHeading" class="firstHeading">KM-300</h1>' +
-                    
-                    
+
+
                     '<div id="bodyContent">' +
-                    
-                    '<table style="width:100%">'+  
+
+                    '<table style="width:100%">'+
                     "<tr>" +
                     "<th> <b> Progres </b></th>"+
                     "<th>:</th>"+
@@ -129,26 +129,26 @@ var map;
                     "<th><button onclick='gamtekSaya()'>Construction Drawing</button></th>"+
                     // "<th><button>Project Report</button></th>"+
                     "</tr>"+
-                    
-                    
-                    
-                    
+
+
+
+
                     "</table>"+
 
 
                     "</div>" +
                     "</div>";
 
-                const content5 = 
+                const content5 =
                     '<div id="content">' +
                     '<div id="siteNotice">' +
                     "</div>" +
                     '<h1 id="firstHeading" class="firstHeading">KM-299</h1>' +
-                    
-                    
+
+
                     '<div id="bodyContent">' +
-                    
-                    '<table style="width:100%">'+  
+
+                    '<table style="width:100%">'+
                     "<tr>" +
                     "<th> <b> Progres </b></th>"+
                     "<th>:</th>"+
@@ -188,26 +188,26 @@ var map;
                     "<th><button onclick='gamtekSaya()'>Construction Drawing</button></th>"+
                     // "<th><button>Project Report</button></th>"+
                     "</tr>"+
-                    
-                    
-                    
-                    
+
+
+
+
                     "</table>"+
 
 
                     "</div>" +
                     "</div>";
 
-                    const content6 = 
+                    const content6 =
                     '<div id="content">' +
                     '<div id="siteNotice">' +
                     "</div>" +
                     '<h1 id="firstHeading" class="firstHeading">KM-301</h1>' +
-                    
-                    
+
+
                     '<div id="bodyContent">' +
-                    
-                    '<table style="width:100%">'+  
+
+                    '<table style="width:100%">'+
                     "<tr>" +
                     "<th> <b> Progres </b></th>"+
                     "<th>:</th>"+
@@ -247,10 +247,10 @@ var map;
                     "<th><button onclick='gamtekSaya()'>Construction Drawing</button></th>"+
                     // "<th><button>Project Report</button></th>"+
                     "</tr>"+
-                    
-                    
-                    
-                    
+
+
+
+
                     "</table>"+
 
 
@@ -259,12 +259,12 @@ var map;
 
 
 
-                    
 
 
-                
+
+
                 const titikKCIC=[
-                    
+
 
                     [
                         "KM-300",
@@ -292,9 +292,9 @@ var map;
                         25,
                         33,
                         content6,
-                    ],              
+                    ],
 
-                  
+
 
 
                 ];
@@ -310,17 +310,17 @@ var map;
                             url:currtitikKCIC[3],
                             scaledSize:new google.maps.Size(currtitikKCIC[4],currtitikKCIC[5])
                         },
-                    
+
                         animation:google.maps.Animation.DROP
                     });
 
 
-                
+
                     const infowindow = new google.maps.InfoWindow({
                         content: currtitikKCIC[6],
                         maxWidth : 200,
                     });
-                    
+
                     marker.addListener("click", () => {
                         infowindow.open({
                             anchor: marker,
@@ -331,15 +331,13 @@ var map;
 
 
                 };
-      
+
         }
 
 
             google.maps.event.addDomListener(window, 'load', initialize);
 
 
-        
-        
+
+
         // When the user clicks on div, open the popup
-        
-            
