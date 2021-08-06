@@ -221,7 +221,8 @@ visibility: hidden;
  }
 
 .list {
-
+max-width: 100%;
+height: auto;
 }
 
  /* Add animation (fade in the popup) */
