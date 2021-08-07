@@ -71,13 +71,13 @@
                 src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRj4oF9at_a656n6W02H8uGURmoQ2N8ZOoKQDeHyAq_AtWiuTkQeKngmqfdUDnmlufmkGG47q4Ex-fi/pubchart?oid=1071236399&amp;format=interactive"></iframe>  -->
             </button>
             <button class="btn btn-outline-dark btn-sm btn-block button-utama button3" onclick="gamtekSaya()" target="">Informasi Proyek</button>
-            <button class="btn btn-outline-dark btn-sm btn-block button-utama button4" onclick="window.location.href='';" target="">Zonasi</button>
-            <button class="btn btn-outline-dark btn-sm btn-block button-utama button7" onclick="window.location.href=" target="">Komentar</button>
+            <div class="zoominbefore"><button class="btn btn-outline-dark btn-sm btn-block button-utama button4" >Zonasi</button></div>
+            <div class="zoomoutbefore"><button class=" btn btn-outline-dark btn-sm btn-block button-utama button7">Komentar</button></div>
             <!-- <button class="button8" onclick="window.location.href='';" target=""> 360 View</button> -->
           </div>
         </div>
         <!-- Gamtek awal -->
-        <div class="gamtek col-12" id='gamtek'>
+        <div class="gamtek col-12" id="gamtek">
           <div class="popupgamtek" id="daftarGamtekSaya">
 
             <!-- Template list gamtek -->
@@ -156,22 +156,23 @@
   <!-- Penutup infocontainer -->
 
   <div class="gamtekfs">
-    <img class="gamtekfsbefore" src="drawing/Original PNG/z1-Page1.png">
-    <img class="gamtekfslogobefore" src="img/z2in.png">
-    <img class="gamtekfslogobackbefore" src="img/back.png">
+    <div class="gamtekfsbefore">
+
+
+    
+    </div>
+  <img class="zoominbefore" src="img/z2in.png">
+  <img class="zoomoutbefore" src="img/back.png">
   </div>
 
-  <div class="gamtekz2">
-    <iframe class="gamtekz2htmlbefore" src="drawing/Page2/index.html">
-    </iframe>
-  </div>
+ 
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbUFZJhvcv_dLJIxGJrdfpTE3YLhupiVA">
   </script>
 
 
-  <script src="maps.js"></script>
-  <script src="contentbutton.js"></script>
+  <script src="js/maps.js"></script>
+  <script src="js/drawing.js"> </script>
 
 
 
@@ -194,132 +195,7 @@
   </script>
 
 
-  <script>
-    const omg = document.querySelector('.gamtek');
-    const omgomgfs = document.querySelector('.gamtekfslogobefore');
-    const gamtekFullScreen = document.querySelector('.gamtekfsbefore');
-    const gamtekz2html = document.querySelector('.gamtekz2htmlbefore');
-    const logoback = document.querySelector('.gamtekfslogobackbefore');
-    window.z2OnScreen = 0;
-    window.fsOnScreen = 0;
-
-
-
-    function myFunction() {
-      var popup = document.getElementById("myPopup");
-      popup.classList.toggle("show");
-
-
-    };
-
-
-    function gamtekSaya() {
-      var gamtek = document.getElementById("daftarGamtekSaya");
-      gamtek.classList.toggle("buka");
-
-
-    };
-
-    omg.addEventListener('click', function(e) {
-
-
-
-
-      //buat pencet list untuk fs tapi dari layar 0, atau buat pencet list tapi lagi z2
-      if (window.fsOnScreen === 0) {
-        path = "drawing/Original PNG/z1-" + e.target.id + ".png";
-        gamtekFullScreen.src = path;
-        window.idOnScreen = e.target.id;
-
-        //buat pencet list tapi lagi z2
-        if (window.z2OnScreen === 1) {
-
-
-          path = "drawing/" + window.idOnScreen + "/index.html";
-          gamtekz2html.src = path;
-
-        }
-
-        //buat pencet list untuk fs tapi dari layar 0
-        else {
-          window.fsOnScreen = 1;
-          gamtekFullScreen.classList.remove("gamtekfsbefore");
-
-          gamtekFullScreen.classList.add("gamtekfsafter");
-          omgomgfs.classList.toggle("gamtekfslogoafter");
-          logoback.classList.toggle("gamtekfslogobackafter");
-        };
-      }
-
-      // buat kalo dari layar fs ganti page
-      else if (window.fsOnScreen === 1) {
-        path = "drawing/Original PNG/z1-" + e.target.id + ".png";
-        gamtekFullScreen.src = path;
-
-      }
-
-
-
-    });
-
-    omgomgfs.addEventListener('click', function(e) {
-
-      if (window.z2OnScreen === 0) {
-        window.z2OnScreen = 1;
-
-
-        omgomgfs.src = "img/z2out.png";
-
-        gamtekFullScreen.classList.remove("gamtekfsafter");
-        gamtekz2html.classList.toggle("gamtekz2htmlbefore");
-
-        path = "drawing/" + window.idOnScreen + "/index.html";
-        gamtekz2html.src = path;
-
-        gamtekz2html.classList.toggle("gamtekz2htmlafter");
-        gamtekFullScreen.classList.add("gamtekfsbefore");
-        window.fsOnScreen = 0;
-        logoback.classList.remove("gamtekfslogobackafter");
-        logoback.classList.add("gamtekfslogobackbefore");
-
-
-      } else {
-        window.z2OnScreen = 0;
-
-        gamtekFullScreen.classList.toggle("gamtekfsbefore");
-        gamtekz2html.classList.toggle("gamtekz2htmlafter");
-
-        path = "drawing/" + window.idOnScreen + "/index.html";
-        gamtekz2html.src = path;
-
-        gamtekz2html.classList.toggle("gamtekz2htmlbefore");
-        gamtekFullScreen.classList.toggle("gamtekfsafter");
-        window.fsOnScreen = 1;
-        logoback.classList.remove("gamtekfslogobackbefore");
-        logoback.classList.add("gamtekfslogobackafter");
-        omgomgfs.src = "img/z2in.png";
-
-
-        ;
-
-      }
-
-
-
-    });
-
-    logoback.addEventListener('click', function(e) {
-      gamtekFullScreen.classList.toggle("gamtekfsafter");
-      gamtekFullScreen.classList.toggle("gamtekfsbefore");
-      window.fsOnScreen = 0;
-      logoback.classList.remove("gamtekfslogobackafter");
-      logoback.classList.add("gamtekfslogobackbefore");
-      omgomgfs.classList.remove("gamtekfslogoafter");
-      omgomgfs.classList.add("gamtekfslogobefore");
-
-
-    });
-  </script>
+  
 
   <div id="map">
 
