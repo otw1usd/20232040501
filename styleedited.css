@@ -1,7 +1,6 @@
 body {
    height: 100%;
    padding: 0;
-   overflow-y: auto;
    background-color: #F9F7F7;
  }
 
@@ -185,13 +184,12 @@ body {
    visibility: hidden;
    position: absolute;
    margin:0;
-   cursor: pointer;
    -webkit-user-select: none;
    -moz-user-select: none;
    -ms-user-select: none;
    user-select: none;
       z-index: 0;
-   height:100%;
+   height:auto;
    left:0;
  }
 
@@ -200,7 +198,7 @@ visibility: hidden;
    background-color: #fff;
    z-index: -15;
    border-radius: 6px;
-   height:100%;
+   height:auto;
  }
 
  /* Popup arrow */
@@ -210,7 +208,7 @@ visibility: hidden;
    border-width: 5px;
    border-style: solid;
    border-color: #555 transparent transparent transparent;
-      height:100%;
+      height:auto;
  }
 
  /* Toggle this class - hide and show the popup */
@@ -222,7 +220,7 @@ visibility: hidden;
  }
 
 .list {
-max-width: 100%;
+width: 100%;
 height: auto;
 }
 
@@ -277,7 +275,7 @@ height: auto;
  }
 
  .gamtekfs .gamtekfslogobefore {
-   /* visibility: hidden; */
+   visibility: hidden;
    position: absolute;
    width: 0;
    z-index: -11;
@@ -295,7 +293,7 @@ height: auto;
  }
 
  .gamtekfs .gamtekfslogobackbefore {
-   /* visibility: hidden; */
+   visibility: hidden;
    position: absolute;
    width: 0;
    z-index: -11;
@@ -314,7 +312,7 @@ height: auto;
 
  .gamtekfsbefore {
    position: absolute;
-   /* visibility: hidden; */
+   visibility: hidden;
    z-index: -12;
    width: 0;
  }
@@ -332,23 +330,27 @@ height: auto;
 
  .gamtekz2 .gamtekz2htmlbefore {
    position: absolute;
-   /* visibility: hidden; */
-   width: 0;
+   visibility: hidden;
  }
 
  .gamtekz2 .gamtekz2htmlafter {
    position: absolute;
    visibility: visible;
    z-index: 11;
-   height: 99%;
-   right: 100px;
-   width: 1327px;
+   height: 100%;
+   width: 100%;
  }
+
+.row {
+  --bs-gutter-x: 0;
+  --bs-gutter-y: 0;
+}
 
 .div-logo-kecil {
 position: static;
 display: inline;
-padding:0.2rem;
+padding-left:0 !important;
+padding-right:0 !important;
 }
 
 .logo-kecil {
