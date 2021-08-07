@@ -339,12 +339,18 @@ height: auto;
    z-index: 11;
    height: 100%;
    width: 100%;
- }W
+ }
+
+.row {
+  --bs-gutter-x: 0;
+  --bs-gutter-y: 0;
+}
 
 .div-logo-kecil {
 position: static;
 display: inline;
-padding:0.2rem;
+padding-left:0 !important;
+padding-right:0 !important;
 }
 
 .logo-kecil {
