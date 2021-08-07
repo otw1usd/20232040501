@@ -51,22 +51,22 @@ body {
   margin-bottom: 0;
 }
 
+.div-bawah-fitur{
+  border-bottom: solid 1px;
+}
+
 .row {
   margin:0;
 }
  .floating-panel {
    text-align: left;
    font-size: 0.8rem;
-   border-bottom:solid 1px;
-   padding: 0.8rem;
  }
  .lini-masa {
    font-size: 1rem;
  }
 
 .infocontainer-button{
-  border-bottom:solid 1px;
-  padding: 0.8rem;
 }
 
 
@@ -83,6 +83,7 @@ body {
  }
 .btn{
   margin-bottom: 5%;
+    font-size: 0.8rem;
 }
 
 
@@ -378,9 +379,7 @@ padding: 20%;
    text-align: center;
  }
 
- .btn {
-   font-size: 0.8rem;
- }
+
 
  .blinking {
    animation: blinkingText 1.2s infinite;
