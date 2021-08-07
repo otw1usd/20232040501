@@ -128,7 +128,7 @@ var imageMapType;
                     // "</tr>"+
 
                     "<tr>" +
-                    "<th><button onclick='gamtekSaya()'>Construction Drawing</button></th>"+
+                    "<th><button onclick='gamtekSaya(300)'>Construction Drawing</button></th>"+
                     // "<th><button>Project Report</button></th>"+
                     "</tr>"+
 
@@ -187,7 +187,7 @@ var imageMapType;
                     // "</tr>"+
 
                     "<tr>" +
-                    "<th><button onclick='gamtekSaya()'>Construction Drawing</button></th>"+
+                    "<th><button onclick='gamtekSaya(299)'>Construction Drawing</button></th>"+
                     // "<th><button>Project Report</button></th>"+
                     "</tr>"+
 
@@ -246,7 +246,7 @@ var imageMapType;
                     // "</tr>"+
 
                     "<tr>" +
-                    "<th><button onclick='gamtekSaya()'>Construction Drawing</button></th>"+
+                    "<th><button onclick='gamtekSaya(301)'>Construction Drawing</button></th>"+
                     // "<th><button>Project Report</button></th>"+
                     "</tr>"+
 
@@ -332,7 +332,7 @@ var imageMapType;
                             shouldFocus: false,
 
                         });
-                        window.locationOnScreen = currtitikKCIC[0];
+                        // window.locationOnScreen = currtitikKCIC[0];
                     });
                     
 

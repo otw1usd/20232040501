@@ -15,13 +15,14 @@ window.listGamtekSaya =0;
     };
 
 //buka button construction drawing, nnti di upgrade ke location
-    function gamtekSaya() {
+
+
+    function gamtekSaya(asd) {
+
       if(window.listGamtekSaya===0){
         
-      // window.locationOnScreen=location;
-      //bikin path gambar list
-      //for (i=1;i<path.length,i++) {'masukin card jgn lupa diapus semua enter dan spasi'}
-      //push location onscreen
+      window.locationOnScreen=asd;
+     
       window.listGamtekSaya +=1;
       console.log(listGamtekSaya);
 
@@ -31,10 +32,8 @@ window.listGamtekSaya =0;
        
 
       for (i=1 ; i < 4 ; i++){
-        
-        document.querySelector('.loopingbatasgamtek').innerHTML+='<div class="card border-dark mb-3 row"><div class="card-header">Page'+i+'</div><div class="card-body text-dark"><div class="row"><div class="foto-gamtek col-10"><img src="drawing/'+window.locationOnScreen+'/list/list-Page'+i+'.png" alt="Page1" id="Page1" class="list"></div><div class="div-logo-kecil col-2"><img class="logo-kecil" src="img/download.png" alt="download"><br><img class="logo-kecil" src="img/print.png" alt="print"><br><img class="logo-kecil" src="img/share.png" alt="share"></div></div></div></div>';
-
-
+        //cari code itung jumlah file biar makin auto
+        document.querySelector('.loopingbatasgamtek').innerHTML+='<div class="card border-dark mb-3 row"><div class="card-header">Page'+i+'</div><div class="card-body text-dark"><div class="row"><div class="foto-gamtek col-10"><img src="drawing/KM-'+window.locationOnScreen+'/list/list-Page'+i+'.png" alt="Page1" id="Page1" class="list"></div><div class="div-logo-kecil col-2"><img class="logo-kecil" src="img/download.png" alt="download"><br><img class="logo-kecil" src="img/print.png" alt="print"><br><img class="logo-kecil" src="img/share.png" alt="share"></div></div></div></div>';
       };
 
 
@@ -42,8 +41,9 @@ window.listGamtekSaya =0;
       var gamtek = document.getElementById("daftarGamtekSaya");
       gamtek.classList.toggle("buka");
 
-      //cek kalo locationonscreen sama, berarti nutup, kalo beda berarti buka
+      
     }
+    //cek kalo locationonscreen sama, berarti nutup, kalo beda berarti buka
     else {
       window.listGamtekSaya -=1;
       document.querySelector('.loopingbatasgamtek').remove();
