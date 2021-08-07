@@ -1,5 +1,5 @@
 var map;
-           var imageMapType;
+var imageMapType;
 
 
 
@@ -42,6 +42,8 @@ var map;
                 });
 
                 map.overlayMapTypes.push(imageMapType);
+
+                //nanti ambil disini buat waktunya
 
 
 
@@ -299,6 +301,8 @@ var map;
 
                 ];
 
+
+
                 for(let i=0; i<titikKCIC.length;i++){
                     const currtitikKCIC=titikKCIC[i];
 
@@ -326,8 +330,11 @@ var map;
                             anchor: marker,
                             map,
                             shouldFocus: false,
+
                         });
+                        window.locationOnScreen = currtitikKCIC[0];
                     });
+                    
 
 
                 };
