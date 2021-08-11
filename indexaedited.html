@@ -13,6 +13,8 @@
   <!-- Bootstrap JS-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
   <!-- Leaflet-GoogleMutant -->
   <script src="https://unpkg.com/leaflet.gridlayer.googlemutant@0.10.0/Leaflet.GoogleMutant.js"></script>
   <!-- Leaflet-Pegman -->
@@ -26,6 +28,10 @@
   <link rel="stylesheet" href="styleedited.css">
   <!-- Leaflet (JS/CSS) -->
   <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" /> -->
+
+  <!-- style 360 butuh dipelajari dan diedit -->
+  <!-- <link rel="stylesheet" href="dataset/360/vendor/reset.min.css"> -->
+  <link rel="stylesheet" href="style360.css">
 </head>
 
 <body>
@@ -44,11 +50,9 @@
       <h3><span class="blinking"> 75 % </span></h4>
         <h6 class="fitur">Fitur Utama</h6>
         <!-- Infocontainer Button -->
-        <div class="div-bawah-fitur row">
+        <div class="row">
           <!-- Panel Tanggal -->
-          <div class="col-lg-1">
-          </div>
-          <div class="floating-panel col-lg-4">
+          <div class="floating-panel col-lg-6">
             <strong class="lini-masa">Lini Masa</strong> <br>
             <input type="radio" class="btn-check" id="radio-1" name="date" value="none" onclick="toggleOverlay(this)" />
             <label class="btn btn-outline-dark btn-sm btn-block" for="radio-1">Pre-konstruksi</label>
@@ -65,30 +69,27 @@
 
 
           </div>
-          <div class="col-lg-2">
-          </div>
-          <div class="infocontainer-button col-lg-4">
+          <div class="infocontainer-button col-lg-6">
             <strong class="lini-masa">Fitur</strong> <br>
             <button class="btn btn-outline-dark btn-sm btn-block button-utama button2 popup -container-fluid" onclick="myFunction()">Kurva S
               <!-- BUAT DI LUAR GRAFIKNYA -->
               <!-- <iframe class="popuptext" id="myPopup" seamless frameborder="0" scrolling="no"
                 src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRj4oF9at_a656n6W02H8uGURmoQ2N8ZOoKQDeHyAq_AtWiuTkQeKngmqfdUDnmlufmkGG47q4Ex-fi/pubchart?oid=1071236399&amp;format=interactive"></iframe>  -->
             </button>
-            <button class="btn btn-outline-dark btn-sm btn-block button-utama button3" onclick="gamtekSaya()" target="">Informasi Proyek</button>
-            <div class="zoominbefore"><button class="btn btn-outline-dark btn-sm btn-block button-utama button4" >Zonasi</button></div>
-            <div class="zoomoutbefore"><button class=" btn btn-outline-dark btn-sm btn-block button-utama button7">Komentar</button></div>
+            <button class="btn btn-outline-dark btn-sm btn-block button-utama button3" onclick="myPanox()">TUTUP360</button>
+            <div class="zoominbefore"><button class="btn btn-outline-dark btn-sm btn-block button-utama button4">ZoomIn</button></div>
+            <div class="zoomoutbefore"><button class="btn btn-outline-dark btn-sm btn-block button-utama button7">ZoomOut</button></div>
+            <!-- <button class="btn btn-outline-dark btn-sm btn-block button-utama button3" >Zonasi</button></div> -->
+            <!-- <button class="btn btn-outline-dark btn-sm btn-block button-utama button3">Komentar</button></div> -->
             <!-- <button class="button8" onclick="window.location.href='';" target=""> 360 View</button> -->
           </div>
-          <div class="col-lg-1">
-          </div>
         </div>
-        <!-- Gamtek awal -->
+
+<!-- Gamtek awal -->
         <div class="gamtek col-12" id="gamtek">
           <div class="popupgamtek" id="daftarGamtekSaya">
             <div class="loopingbatasgamtek">
-              <div></div>
-
-                          
+              <div></div> <!-- baris ini jgn diapus, emg gaada isi soalnya buat javascript -->                  
             </div>
           </div>
         </div>
@@ -97,24 +98,150 @@
   <!-- Penutup infocontainer -->
 
   <div class="gamtekfs">
-    <div class="gamtekfsbefore">
-
-
-    
+    <div class="gamtekfsshow">
+   
     </div>
   <img class="zoominbefore" src="img/z2in.png">
   <img class="zoomoutbefore" src="img/back.png">
   </div>
 
- 
+<!-- ----------GAMTEK ABIS----------  -->
+<!-- ------------------360------------------ -->
+<div class="panobefore">
+<div id="pano"></div>
+<div id="sceneList" class="col-12">
+  <ul class="scenes">
+    
+      <a href="javascript:void(0)" class="scene" data-id="0-grid-0e">
+        <li class="text">Grid 0E</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="1-grid-1a">
+        <li class="text">Grid 1A</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="2-grid-1b">
+        <li class="text">Grid 1B</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="3-grid-1c">
+        <li class="text">Grid 1C</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="4-grid-1d">
+        <li class="text">Grid 1D</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="5-grid-1j">
+        <li class="text">Grid 1J</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="6-grid-2f">
+        <li class="text">Grid 2F</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="7-grid-2h">
+        <li class="text">Grid 2H</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="8-grid-2i">
+        <li class="text">Grid 2I</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="9-grid-2j">
+        <li class="text">Grid 2J</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="10-grid-3c">
+        <li class="text">Grid 3C</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="11-grid-3e">
+        <li class="text">Grid 3E</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="12-grid-4c-1">
+        <li class="text">Grid 4C-1</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="13-grid-4c-2">
+        <li class="text">Grid 4C-2</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="14-start-2">
+        <li class="text">Start #2</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="15-start">
+        <li class="text">Start</li>
+      </a>
+    
+  </ul>
+</div>
+
+<div id="titleBar">
+    <h1 class="sceneName"></h1>
+  </div>
+
+  <a href="javascript:void(0)" id="autorotateToggle">
+    <img class="icon off" src="img/play.png">
+    <img class="icon on" src="img/pause.png">
+  </a>
+
+  <a href="javascript:void(0)" id="fullscreenToggle">
+    <img class="icon off" src="img/fullscreen.png">
+    <img class="icon on" src="img/windowed.png">
+  </a>
+
+  <a href="javascript:void(0)" id="sceneListToggle">
+    <img class="icon off" src="img/expand.png">
+    <img class="icon on" src="img/collapse.png">
+  </a>
+
+
+  <a href="javascript:void(0)" id="viewUp" class="viewControlButton viewControlButton-1">
+    <img class="icon" src="img/up.png">
+  </a>
+  <a href="javascript:void(0)" id="viewDown" class="viewControlButton viewControlButton-2">
+    <img class="icon" src="img/down.png">
+  </a>
+  <a href="javascript:void(0)" id="viewLeft" class="viewControlButton viewControlButton-3">
+    <img class="icon" src="img/left.png">
+  </a>
+  <a href="javascript:void(0)" id="viewRight" class="viewControlButton viewControlButton-4">
+    <img class="icon" src="img/right.png">
+  </a>
+  <a href="javascript:void(0)" id="viewIn" class="viewControlButton viewControlButton-5">
+    <img class="icon" src="img/plus.png">
+  </a>
+  <a href="javascript:void(0)" id="viewOut" class="viewControlButton viewControlButton-6">
+    <img class="icon" src="img/minus.png">
+  </a>
+
+</div>
+
+
+<!-- -------------360abis------------- -->
+
+
+
+
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbUFZJhvcv_dLJIxGJrdfpTE3YLhupiVA">
   </script>
+  
 
 
   <script src="js/data.js"></script>
   <script src="js/drawing.js"> </script>
   <script src="js/maps.js"></script>
+
+  <script src="dataset/360/vendor/screenfull.min.js" ></script>
+  <script src="dataset/360/vendor/bowser.min.js" ></script>
+  <script src="dataset/360/vendor/marzipano.js" ></script>
+
+  <script src="dataset/360/data.js"></script>
+  <script src="dataset/360/index.js"></script>
 
 
 
@@ -141,8 +268,20 @@
   
 
   <div id="map">
-
   </div>
+
+  <script>
+    function myPano() {
+          var popup = document.getElementById("pano");
+          popup.classList.remove("panobefore");
+          popup.classList.add("panoafter");
+        };
+    function myPanox() {
+          var popup = document.getElementById("pano");
+          popup.classList.remove("panoafter");
+          popup.classList.add("panobefore");
+        };
+  </script>
 
 </body>
 

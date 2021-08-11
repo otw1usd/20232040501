@@ -34,6 +34,23 @@ body {
    z-index: -1;
  }
 
+ #pano {
+  position: absolute;
+  top: 0;
+  left:16.66667%;
+  height: 100%;
+  width: 83.3333%;
+  overflow: hidden;
+}
+
+ .panobefore {
+  visibility: hidden;
+}
+
+
+ .panoafter {
+  visibility: visible;
+}
 
  .infocontainer {
    position: fixed;

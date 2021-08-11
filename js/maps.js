@@ -103,7 +103,7 @@ var waktuOnScreen=0;
                     '<table style="width:100%">'+
                     "<tr>" +
                     // "<th> <button>Gantt Chart</button></th>"+
-                    "<th><button>3D Virtual Tour</button></th>"+
+                    "<th><button onclick='myPano()'>3D Virtual Tour</button></th>"+
                     "</tr>"+
 
                     "<tr>" +
@@ -115,7 +115,7 @@ var waktuOnScreen=0;
                     "</tr>"+
 
                     "<tr>" +
-                    "<th><button onclick='reportSaya(301)'>Progress Report</button></th>"+
+                    "<th><button onclick='reportSaya(300)'>Progress Report</button></th>"+
                     "</tr>"+
 
                     "</table>"+
@@ -146,7 +146,7 @@ var waktuOnScreen=0;
                     '<table style="width:100%">'+
                     "<tr>" +
                     // "<th> <button>Gantt Chart</button></th>"+
-                    "<th><button>3D Virtual Tour</button></th>"+
+                    "<th><button onclick='myPano()'>3D Virtual Tour</button></th>"+
                     "</tr>"+
 
                     "<tr>" +
@@ -194,7 +194,7 @@ var waktuOnScreen=0;
                     '<table style="width:100%">'+
                     "<tr>" +
                     // "<th> <button>Gantt Chart</button></th>"+
-                    "<th><button>3D Virtual Tour</button></th>"+
+                    "<th><button onclick='myPano()'>3D Virtual Tour</button></th>"+
                     "</tr>"+
 
                     "<tr>" +
