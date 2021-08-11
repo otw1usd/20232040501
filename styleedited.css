@@ -2,12 +2,17 @@ body {
    height: 100%;
    padding: 0;
    background-color: #F9F7F7;
+   overflow: hidden;
  }
+.navbar {
+  background-color: black;
+  z-index: 100;
+}
 
  #logo-kcic {
    display: block;
    margin: auto;
-   width: 90%;
+   width: 50%;
    padding-top: 1rem;
    padding-bottom: 1rem;
  }
@@ -294,52 +299,50 @@ height: auto;
   .zoominbefore {
    visibility: hidden;
    position: absolute;
-   width: 0;
+   width: 2rem;
    z-index: -11;
  }
 
 .zoominafter {
-   position: absolute;
+   position: fixed;
    visibility: visible;
    z-index: 15;
    text-align: right;
-   left: 22%;
+   left: 16.6667%;
    top: 3rem;
-   width: 2rem;
+   width:
    cursor: pointer;
  }
 
   .zoomoutbefore {
    visibility: hidden;
    position: absolute;
-   width: 0;
+   width: 2rem;
    z-index: -11;
  }
 
 .zoomoutafter {
-   position: absolute;
+   position: fixed;
    visibility: visible;
    z-index: 15;
-   text-align: right;
-   left: 22%;
-   top: 1rem;
-   width: 2rem;
+   top: 5rem;
+   left: 16.6667%;
    cursor: pointer;
  }
 
  .gamtekfsshow {
-   
-   position: absolute;
+
+   position: fixed;
    visibility: visible;
    overflow: scroll;
    z-index: 11;
-   
-   left: 20%;
-   top: 3rem;
-   max-height: 50rem;
-   max-width: 70rem;
+
+   left: 16.66667%;
+   top: 0;
+   max-height: 100%;
+   max-width: 83.333%;
    border:  0;
-   cellpadding : 0; 
+   cellpadding : 0;
    cellspacing :  0;
  }
 
