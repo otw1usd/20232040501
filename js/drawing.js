@@ -5,6 +5,8 @@ const zoomout = document.querySelector('.zoomoutbefore');
 var zoomOnScreen = 0; //0 = list, atau kosong, atau gamtek blom dibuka
 var locationOnScreen=0;
 window.listGamtekSaya =0;
+window.rowfile = 4;
+window.colfile = 6;
 
     
 
@@ -31,9 +33,9 @@ window.listGamtekSaya =0;
 
        
 
-      for (i=1 ; i < 4 ; i++){
+      for (i=1 ; i < 5 ; i++){
         //cari code itung jumlah file biar makin auto
-        document.querySelector('.loopingbatasgamtek').innerHTML+='<div class="card border-dark mb-3 row"><div class="card-header">Page'+i+'</div><div class="card-body text-dark"><div class="row"><div class="foto-gamtek col-10"><img src="drawing/KM-'+window.locationOnScreen+'/list/list-Page'+i+'.png" alt="Page1" id="Page1" class="list"></div><div class="div-logo-kecil col-2"><img class="logo-kecil" src="img/download.png" alt="download"><br><img class="logo-kecil" src="img/print.png" alt="print"><br><img class="logo-kecil" src="img/share.png" alt="share"></div></div></div></div>';
+        document.querySelector('.loopingbatasgamtek').innerHTML+='<div class="card border-dark mb-3 row"><div class="card-header">Page'+i+'</div><div class="card-body text-dark"><div class="row"><div class="foto-gamtek col-10"><img src="dataset/drawing/KM-'+window.locationOnScreen+'/Original PNG/z0-Page'+i+'.png" alt="Page'+i+'"" id="Page'+i+'" class="list"></div><div class="div-logo-kecil col-2"><img class="logo-kecil" src="img/download.png" alt="download"><br><img class="logo-kecil" src="img/print.png" alt="print"><br><img class="logo-kecil" src="img/share.png" alt="share"></div></div></div></div>';
       };
 
 
@@ -70,8 +72,6 @@ listGamtek.addEventListener('click', function(e) {
     zoomin.classList.remove("zoominbefore");
     zoomin.classList.add("zoominafter");
     window.zoomOnScreen =+1;
-    window.rowfile = 7; //ini yang zos1
-    window.colfile = 10; //ini yang zos1
 
     munculinTabel();
     
@@ -88,10 +88,13 @@ listGamtek.addEventListener('click', function(e) {
 
 //fungsi general munculin gamtek
 function munculinTabel (){
-  document.querySelector('.gamtekfsbefore').remove();
-  document.querySelector('.gamtekfs').innerHTML+='<div class="gamtekfsbefore"></div>';
+  document.querySelector('.gamtekfsshow').remove();
+  document.querySelector('.gamtekfs').innerHTML+='<div class="gamtekfsshow"></div>';
 
       var table = document.createElement('table'), tr, td, row, cell;
+      // table.setAttribute= ('border','0');
+       table.setAttribute ('cellpadding','0');
+       // table.setAttribute= ('cellspacing','0');
         for (row = 0; row < window.rowfile; row++) {
           tr = document.createElement('tr');
           for (cell = 0; cell < window.colfile; cell++) {
@@ -99,20 +102,27 @@ function munculinTabel (){
               tr.appendChild(td);
               nomor = row * colfile + cell + 1;
               // path = "drawing/"+window.idOnScreen+"/z" + window.zoomOnScreen + "/"+nomor+'.png';
-              path = "drawing/"+window.locationOnScreen+window.idOnScreen+"/z" + window.zoomOnScreen + "/"+nomor+'.png';
+              path = "dataset/drawing/KM-"+window.locationOnScreen+"/"+window.idOnScreen+"/z" + window.zoomOnScreen + "/images/"+nomor+'.jpg';
               //kalau udah bisa perlocation, ganti
               td.innerHTML = '<img src="'+path+'">';
               
           }
           table.appendChild(tr);
       }
-      document.querySelector('.gamtekfsbefore').appendChild(table);
+      document.querySelector('.gamtekfsshow').appendChild(table);
     };
+
+// //jquery lazy photo load
+// $("img").load(function(){
+//   $(this).load(function(){
+//     this.style.opacity=1;
+//   });
+// });
 
 //fungsi general apusin gamtek
 function apusinTabel (){
-  document.querySelector('.gamtekfsbefore').remove();
-  document.querySelector('.gamtekfs').innerHTML+='<div class="gamtekfsbefore"></div>';
+  document.querySelector('.gamtekfsshow').remove();
+  document.querySelector('.gamtekfs').innerHTML+='<div class="gamtekfsshow"></div>';
     };
 
 
@@ -120,31 +130,26 @@ function apusinTabel (){
     zoomout.addEventListener('click', function(e){
       window.zoomOnScreen-=1;
       if(zoomOnScreen === 2){
-           window.rowfile = 7;
-           window.colfile = 10;
+           
            munculinTabel();
         }
         else if(zoomOnScreen === 1) {
-           window.rowfile = 7;
-           window.colfile = 10;
+           
            munculinTabel();
         }
         else if(zoomOnScreen === 3) {
-           window.rowfile = 7;
-           window.colfile = 10;
+           
            munculinTabel();
            //munculin zoomin class
            zoomin.classList.remove("zoominbefore");
            zoomin.classList.add("zoominafter");
         }
         else if(zoomOnScreen === 4) {
-           window.rowfile = 7;
-           window.colfile = 10;
+           
            munculinTabel();
         }
         else if(zoomOnScreen === 0) {
-           window.rowfile = 0;
-           window.colfile = 0;
+           
            apusinTabel();
            zoomout.classList.remove("zoomoutafter");
            zoomout.classList.add("zoomoutbefore");
@@ -165,20 +170,16 @@ function apusinTabel (){
     
       window.zoomOnScreen+=1;
       if(zoomOnScreen === 2){
-           window.rowfile = 7;
-           window.colfile = 10;
+           
         }
         else if(zoomOnScreen === 1) {
-           window.rowfile = 7;
-           window.colfile = 10;
+           
         }
         else if(zoomOnScreen === 3) {
-           window.rowfile = 7;
-           window.colfile = 10;
+           
         }
         else if(zoomOnScreen === 4) {
-           window.rowfile = 7;
-           window.colfile = 10;
+           
            //apus zoomin class
            zoomin.classList.remove("zoominafter");
            zoomin.classList.add("zoominbefore");

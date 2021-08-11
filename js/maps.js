@@ -1,5 +1,6 @@
 var map;
 var imageMapType;
+var waktuOnScreen=0;
 
 
 
@@ -33,7 +34,7 @@ var imageMapType;
                             return null;
                         }*/
 
-                        return ['./01_03_21/',
+                        return ['./dataset/drone/01_06_21/',
                 zoom , '/' , coord.y , '/' , coord.x , '.png']
                      .join('');
 
@@ -42,11 +43,6 @@ var imageMapType;
                 });
 
                 map.overlayMapTypes.push(imageMapType);
-
-                //nanti ambil disini buat waktunya
-
-
-
             }
 
 
@@ -57,7 +53,8 @@ var imageMapType;
                 return;
             }
 
-           var path = "./" + element.value + "/"
+           var path = "./dataset/drone/" + element.value + "/";
+           window.waktuOnScreen = element.value;
 
             imageMapType = new google.maps.ImageMapType({
                 getTileUrl: function(coord, zoom) {
@@ -71,6 +68,8 @@ var imageMapType;
                     zoom + "/" + coord.y + "/" + coord.x + ".png"]
                      .join("");
 
+                     
+
                 },
                     tileSize: new google.maps.Size(256, 256)
             });
@@ -81,7 +80,7 @@ var imageMapType;
 
 
 
-
+//nanti ini dibuat json
                 const content4 =
                     '<div id="content">' +
                     '<div id="siteNotice">' +
@@ -97,16 +96,6 @@ var imageMapType;
                     "<th>:</th>"+
                     "<th>100%</th>"+
                     "</tr>"+
-                    // "<tr>"+
-                    // "<th> <b>Pier</b></th>"+
-                    // "<th>:</th>"+
-                    // "<th>0%</th>"+
-                    // "</tr>"+
-                    // "<tr>"+
-                    // "<th> <b>Girder</b></th>"+
-                    // "<th>:</th>"+
-                    // "<th>0%</th>"+
-                    // "</tr>"+
                     "</table>"+
 
                     '<h6></h6>'+
@@ -118,22 +107,16 @@ var imageMapType;
                     "</tr>"+
 
                     "<tr>" +
-                    // "<th><button>%Progress </button></th>"+
                     "<th><button>Field Photo</button></th>"+
                     "</tr>"+
 
-                    // "<tr>" +
-                    // "<th><button>%Cost</button></th>"+
-                    // "<th><button>Video</button></th>"+
-                    // "</tr>"+
-
                     "<tr>" +
                     "<th><button onclick='gamtekSaya(300)'>Construction Drawing</button></th>"+
-                    // "<th><button>Project Report</button></th>"+
                     "</tr>"+
 
-
-
+                    "<tr>" +
+                    "<th><button onclick='reportSaya(301)'>Progress Report</button></th>"+
+                    "</tr>"+
 
                     "</table>"+
 
@@ -156,16 +139,6 @@ var imageMapType;
                     "<th>:</th>"+
                     "<th>100%</th>"+
                     "</tr>"+
-                    // "<tr>"+
-                    // "<th> <b>Pier</b></th>"+
-                    // "<th>:</th>"+
-                    // "<th>0%</th>"+
-                    // "</tr>"+
-                    // "<tr>"+
-                    // "<th> <b>Girder</b></th>"+
-                    // "<th>:</th>"+
-                    // "<th>0%</th>"+
-                    // "</tr>"+
                     "</table>"+
 
                     '<h6></h6>'+
@@ -177,7 +150,6 @@ var imageMapType;
                     "</tr>"+
 
                     "<tr>" +
-                    // "<th><button>%Progress </button></th>"+
                     "<th><button>Field Photo</button></th>"+
                     "</tr>"+
 
@@ -188,11 +160,11 @@ var imageMapType;
 
                     "<tr>" +
                     "<th><button onclick='gamtekSaya(299)'>Construction Drawing</button></th>"+
-                    // "<th><button>Project Report</button></th>"+
                     "</tr>"+
 
-
-
+                    "<tr>" +
+                    "<th><button onclick='reportSaya(299)'>Progress Report</button></th>"+
+                    "</tr>"+
 
                     "</table>"+
 
@@ -215,16 +187,6 @@ var imageMapType;
                     "<th>:</th>"+
                     "<th>100%</th>"+
                     "</tr>"+
-                    // "<tr>"+
-                    // "<th> <b>Pier</b></th>"+
-                    // "<th>:</th>"+
-                    // "<th>0%</th>"+
-                    // "</tr>"+
-                    // "<tr>"+
-                    // "<th> <b>Girder</b></th>"+
-                    // "<th>:</th>"+
-                    // "<th>0%</th>"+
-                    // "</tr>"+
                     "</table>"+
 
                     '<h6></h6>'+
@@ -236,7 +198,6 @@ var imageMapType;
                     "</tr>"+
 
                     "<tr>" +
-                    // "<th><button>%Progress </button></th>"+
                     "<th><button>Field Photo</button></th>"+
                     "</tr>"+
 
@@ -247,11 +208,11 @@ var imageMapType;
 
                     "<tr>" +
                     "<th><button onclick='gamtekSaya(301)'>Construction Drawing</button></th>"+
-                    // "<th><button>Project Report</button></th>"+
                     "</tr>"+
 
-
-
+                    "<tr>" +
+                    "<th><button onclick='reportSaya(301)'>Progress Report</button></th>"+
+                    "</tr>"+
 
                     "</table>"+
 
@@ -330,9 +291,7 @@ var imageMapType;
                             anchor: marker,
                             map,
                             shouldFocus: false,
-
                         });
-                        // window.locationOnScreen = currtitikKCIC[0];
                     });
                     
 

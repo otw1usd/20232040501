@@ -51,22 +51,22 @@ body {
   margin-bottom: 0;
 }
 
-.div-bawah-fitur{
-  border-bottom: solid 1px;
-}
-
 .row {
   margin:0;
 }
  .floating-panel {
    text-align: left;
    font-size: 0.8rem;
+   border-bottom:solid 1px;
+   padding: 0.8rem;
  }
  .lini-masa {
    font-size: 1rem;
  }
 
 .infocontainer-button{
+  border-bottom:solid 1px;
+  padding: 0.8rem;
 }
 
 
@@ -83,7 +83,6 @@ body {
  }
 .btn{
   margin-bottom: 5%;
-    font-size: 0.8rem;
 }
 
 
@@ -311,7 +310,7 @@ height: auto;
    cursor: pointer;
  }
 
- .gamtekfsbefore {
+ .gamtekfsshow {
    
    position: absolute;
    visibility: visible;
@@ -320,8 +319,11 @@ height: auto;
    
    left: 20%;
    top: 3rem;
-   max-height: 20rem;
-   max-width: 30rem;
+   max-height: 50rem;
+   max-width: 70rem;
+   border:  0;
+   cellpadding : 0; 
+   cellspacing :  0;
  }
 
 
@@ -363,7 +365,9 @@ padding: 20%;
    text-align: center;
  }
 
-
+ .btn {
+   font-size: 0.8rem;
+ }
 
  .blinking {
    animation: blinkingText 1.2s infinite;
