@@ -328,18 +328,18 @@ height: auto;
  }
 
  .gamtekfsshow {
-   
+
    position: absolute;
    visibility: visible;
    overflow: scroll;
    z-index: 11;
-   
+
    left: 20%;
    top: 3rem;
    max-height: 50rem;
    max-width: 70rem;
    border:  0;
-   cellpadding : 0; 
+   cellpadding : 0;
    cellspacing :  0;
  }
 
@@ -410,4 +410,14 @@ padding: 20%;
    100% {
      color: #000;
    }
+ }
+
+/* Label Hotspot 360 */
+
+ #label-360 .floating-panel {
+   text-align: center;
+ }
+
+ .hotspot-360 {
+   font-size: 1rem;
  }
