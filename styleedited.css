@@ -310,7 +310,6 @@ height: auto;
    text-align: right;
    left: 16.6667%;
    top: 3rem;
-   width:
    cursor: pointer;
  }
 
@@ -325,13 +324,24 @@ height: auto;
    position: fixed;
    visibility: visible;
    z-index: 15;
-   top: 5rem;
+   top: 6rem;
    left: 16.6667%;
    cursor: pointer;
  }
 
- .gamtekfsshow {
+.imgzoomgamtek {
+  height: 2rem;
+}
 
+.backpano {
+  position: fixed;
+  cursor: pointer;
+  height: 2rem;
+  left:16.6667%;
+  top: 9rem;
+}
+
+ .gamtekfsshow {
    position: fixed;
    visibility: visible;
    overflow: scroll;
