@@ -40,7 +40,7 @@ a, a:hover, a:active, a:visited {
 
  #pano {
        position: fixed !important;
-      top: 0;
+      top: 4rem;
       left:16.66667%;
       height: 100%;
       width: 83.3333%;
@@ -294,7 +294,7 @@ body.fullscreen-enabled.mobile #autorotateToggle {
 #projectdesc  .text {
   width: 100%;
   font-size: 15px;
-  
+
   line-height: 20px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -343,7 +343,7 @@ body.fullscreen-enabled.mobile #agentbutton {
 .mobile #agentbutton .icon {
   top: 2%;
   left: 5%;
-  
+
   width: 90%;
 
 
@@ -938,6 +938,3 @@ body.view-control-buttons .viewControlButton {
 .viewControlButton-6 {
   margin-left: 105px;
 }
-
- 
-
