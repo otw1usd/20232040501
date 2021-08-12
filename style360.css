@@ -367,7 +367,7 @@ body.fullscreen-enabled.mobile #agentbutton {
 
 
 #sceneList {
-  position: absolute;
+  position: fixed;
   top: 80%;
   left: -220px;
   width: 220px;
@@ -375,6 +375,7 @@ body.fullscreen-enabled.mobile #agentbutton {
   overflow-x: hidden;
   overflow-y: auto;
   margin-left: 0;
+  z-index: 1000;
   -webkit-transition: margin-left 0.5s ease-in-out;
   transition: margin-left 0.5s ease-in-out;
 }
