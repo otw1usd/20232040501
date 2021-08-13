@@ -194,14 +194,7 @@ h3, h6 {
   height: 100%;
   width: 83.3333%;
   overflow: hidden;
-}
-
-.panobefore {
-  visibility: hidden;
-}
-
-.panoafter {
-  visibility: visible;
+  z-index: 11;
 }
 
 #myPopup {
@@ -209,7 +202,7 @@ h3, h6 {
   height: 12.5rem;
 }
 
-. .popup {
+ .popup {
   visibility: hidden;
   display: inline-block;
   cursor: pointer;
@@ -217,6 +210,7 @@ h3, h6 {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  z-index: 12;
 }
 
 .popup .popuptext {
@@ -409,6 +403,7 @@ h3, h6 {
   height: 2rem;
   left: 16.6667%;
   top: 11rem;
+  z-index: 11;
 }
 
 .gamtekfsshow {

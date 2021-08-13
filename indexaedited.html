@@ -14,30 +14,20 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbUFZJhvcv_dLJIxGJrdfpTE3YLhupiVA"></script>
 
-  <!-- Leaflet-GoogleMutant -->
-  <script src="https://unpkg.com/leaflet.gridlayer.googlemutant@0.10.0/Leaflet.GoogleMutant.js"></script>
-  <!-- Leaflet-Pegman -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet-pegman/@latest/leaflet-pegman.css" />
-  <script src="https://unpkg.com/leaflet-pegman/@latest/leaflet-pegman.js"></script>
-  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
-  <!-- <script src="https://unpkg.com/interact.js@1.2.8/dist/interact.min.js"></script> -->
+
+
   <!-- Logo Fontawesome -->
   <title>AMATI/KCIC Depo Tegal Luar</title>
   <meta charset="utf-8" />
   <link rel="stylesheet" href="styleedited.css">
-  <!-- Leaflet (JS/CSS) -->
-  <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" /> -->
-
-  <!-- style 360 butuh dipelajari dan diedit -->
-  <!-- <link rel="stylesheet" href="dataset/360/vendor/reset.min.css"> -->
   <link rel="stylesheet" href="style360.css">
 </head>
 
 <body>
 
   <section id="navigation-bar">
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="index.html"><img class="logo-amati" src="img/logo.png"></a>
       <div class="logo-proyek">
@@ -138,18 +128,12 @@
           </div>
         </div>
       </div>
-
     </div>
   </section>
   <!-- Penutup infocontainer -->
 
 
   <section id="viewing-tab">
-
-
-
-    <!-- back panorama -->
-    <img class="backpano" onclick="myPanox()" src="img/back.png">
 
     <!-- Zoomin Zoomout GAMTEK FS -->
     <div class="zoomoutbefore"><img class="imgzoomgamtek" id="zoomoutgamtekfs" src="img/z2out.png"></div>
@@ -166,74 +150,14 @@
 
     <!-- ------------------360------------------ -->
 
-    <div class="panobefore">
+    <div id="bukatutup" style="display: none;">
       <div id="pano"></div>
+       <!-- back panorama -->
+      <img class="backpano" onclick="bukatutup()" src="img/back.png"  >
       <div id="sceneList">
         <ul class="scenes">
-
-          <a href="javascript:void(0)" class="scene" data-id="0-grid-0e">
-            <li class="text">Grid 0E</li>
-          </a>
-
-          <a href="javascript:void(0)" class="scene" data-id="1-grid-1a">
-            <li class="text">Grid 1A</li>
-          </a>
-
-          <a href="javascript:void(0)" class="scene" data-id="2-grid-1b">
-            <li class="text">Grid 1B</li>
-          </a>
-
-          <a href="javascript:void(0)" class="scene" data-id="3-grid-1c">
-            <li class="text">Grid 1C</li>
-          </a>
-
-          <a href="javascript:void(0)" class="scene" data-id="4-grid-1d">
-            <li class="text">Grid 1D</li>
-          </a>
-
-          <a href="javascript:void(0)" class="scene" data-id="5-grid-1j">
-            <li class="text">Grid 1J</li>
-          </a>
-
-          <a href="javascript:void(0)" class="scene" data-id="6-grid-2f">
-            <li class="text">Grid 2F</li>
-          </a>
-
-          <a href="javascript:void(0)" class="scene" data-id="7-grid-2h">
-            <li class="text">Grid 2H</li>
-          </a>
-
-          <a href="javascript:void(0)" class="scene" data-id="8-grid-2i">
-            <li class="text">Grid 2I</li>
-          </a>
-
-          <a href="javascript:void(0)" class="scene" data-id="9-grid-2j">
-            <li class="text">Grid 2J</li>
-          </a>
-
-          <a href="javascript:void(0)" class="scene" data-id="10-grid-3c">
-            <li class="text">Grid 3C</li>
-          </a>
-
-          <a href="javascript:void(0)" class="scene" data-id="11-grid-3e">
-            <li class="text">Grid 3E</li>
-          </a>
-
-          <a href="javascript:void(0)" class="scene" data-id="12-grid-4c-1">
-            <li class="text">Grid 4C-1</li>
-          </a>
-
-          <a href="javascript:void(0)" class="scene" data-id="13-grid-4c-2">
-            <li class="text">Grid 4C-2</li>
-          </a>
-
-          <a href="javascript:void(0)" class="scene" data-id="14-start-2">
-            <li class="text">Start #2</li>
-          </a>
-
-          <a href="javascript:void(0)" class="scene" data-id="15-start">
-            <li class="text">Start</li>
-          </a>
+          <a href="javascript:void(0)"class="scene" data-id="grid1"><li class="text">grid1</li></a>
+          <a href="javascript:void(0)"class="scene" data-id="grid2"><li class="text">grid2</li></a>
 
         </ul>
       </div>
@@ -286,62 +210,82 @@
   <!-- DIBAWAH INI UDAH JAVASCRIPT SEMUA -->
 
 
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbUFZJhvcv_dLJIxGJrdfpTE3YLhupiVA">
-  </script>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+<script src="js/isipano.js"></script>
+<script src="js/drawing.js"> </script>
+<script src="js/maps.js"></script>
+
+<script src="dataset/360/vendor/screenfull.min.js"></script>
+<script src="dataset/360/vendor/bowser.min.js"></script>
+<script src="dataset/360/vendor/marzipano.js"></script>
 
 
 
-  <script src="js/data.js"></script>
-  <script src="js/drawing.js"> </script>
-  <script src="js/maps.js"></script>
+<script >
+  //BELOM  BERESZSZ
+console.log('mulai');
 
-  <script src="dataset/360/vendor/screenfull.min.js"></script>
-  <script src="dataset/360/vendor/bowser.min.js"></script>
-  <script src="dataset/360/vendor/marzipano.js"></script>
+// // Load JSON text from server hosted file and return JSON parsed object
+// function loadJSON(filePath) {
+//   // Load json file;
+//   var json = loadTextFileAjaxSync(filePath, 'data.json');
+//   // Parse json
+//   return JSON.parse(json);
+// }   
 
-  <script src="dataset/360/data.js"></script>
-  <script src="dataset/360/index.js"></script>
+// // Load text with Ajax synchronously: takes path to file and optional MIME type
+// function loadTextFileAjaxSync(filePath, mimeType)
+// {
+//   var xmlhttp=new XMLHttpRequest();
+//   xmlhttp.open("GET",filePath,false);
+//   if (mimeType != null) {
+//     if (xmlhttp.overrideMimeType) {
+//       xmlhttp.overrideMimeType(mimeType);
+//     }
+//   }
+//   xmlhttp.send();
+//   if (xmlhttp.status==200 && xmlhttp.readyState == 4 )
+//   {
+//     return xmlhttp.responseText;
+//   }
+//   else {
+//     // TODO Throw exception
+
+//     return null;
+//   }
+// }
+
+// loadJSON('data.json');
 
 
+// $.ajax({
+//   url:'data.json',
+//   success: results => {
+//     const datascene = results.scenes;
 
+//     let sceneName = '';
+//     datascene.forEach(m=>{
+//       sceneName +=`<a href="javascript:void(0)"class="scene" data-id="${m.id}"><li class="text">${m.name}</li></a>`;   
+//     }); 
 
-  <script>
-    var map = L.map('map');
-    map.setView(new L.LatLng(45, 9.5), 5);
+//     $('.scenes').html(sceneName);
+    
 
-    var OpenTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-      maxZoom: 17,
-      attribution: 'Map data: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)',
-      opacity: 0.90
-    });
-    OpenTopoMap.addTo(map);
+//   },
+//   error:(e)=>{
+//     console.log('asd');
+//   }
+// });
 
-    var pegmanControl = new L.Control.Pegman({
-      position: 'bottomright', // position of control inside the map
-      theme: "leaflet-pegman-v3-small", // or "leaflet-pegman-v3-default"
-    });
-    pegmanControl.addTo(map);
-  </script>
+// console.log('selesai');
 
+</script>
 
+<script src="dataset/360/data.js"></script>
+<script src="dataset/360/index.js"></script>
 
-
-  <div id="map">
-  </div>
-
-  <script>
-    function myPano() {
-      var popup = document.getElementById("pano");
-      popup.classList.remove("panobefore");
-      popup.classList.add("panoafter");
-    };
-
-    function myPanox() {
-      var popup = document.getElementById("pano");
-      popup.classList.remove("panoafter");
-      popup.classList.add("panobefore");
-    };
-  </script>
+  <div id="map"></div>
 
 </body>
 
