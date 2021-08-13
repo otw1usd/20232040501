@@ -335,10 +335,9 @@ body.fullscreen-enabled.mobile #agentbutton {
 
 
 #sceneList {
-  position: fixed;
-  top: 80%;
-  left: -220px;
-  width: 220px;
+  position: static;
+  left: 0;
+  width: 100%;
   max-height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
@@ -363,7 +362,7 @@ body.fullscreen-enabled.mobile #agentbutton {
 }
 
 .mobile #sceneList.enabled {
-  margin-left: 100%;
+  margin-left: 0;
 }
 
 .mobile #sceneList .scenes {
@@ -371,7 +370,7 @@ body.fullscreen-enabled.mobile #agentbutton {
 }
 
 #sceneList.enabled {
-  margin-left: 220px;
+  margin-left: 0;
 }
 
 #sceneList .scene {
