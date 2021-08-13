@@ -37,25 +37,6 @@ a, a:hover, a:active, a:visited {
             }*/
 
 
-
- #pano {
-       position: fixed !important;
-      top: 4rem;
-      left:16.66667%;
-      height: 100%;
-      width: 83.3333%;
-      overflow: hidden;
-    }
-
-     .panobefore {
-      visibility: hidden;
-    }
-
-
-     .panoafter {
-      visibility: visible;
-    }
-
 #titleBar {
   position: absolute;
   top: 0;
