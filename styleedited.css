@@ -333,9 +333,8 @@ h3, h6 {
 
 /* Scrollbar styles */
 ::-webkit-scrollbar {
-  width: 2px;
-  height: 0;
-
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {

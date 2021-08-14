@@ -128,19 +128,13 @@
           </div>
         </div>
       </div>
-      <!-- SCENE LIST 360 -->
-      <div id="sceneList">
-        <strong class="lini-masa">Daftar 360</strong>
-        <a href="javascript:void(0)" class="btn btn-outline-dark btn-sm btn-block" data-id="grid1">
-          <li class="text">grid1</li>
-        </a>
-        <a href="javascript:void(0)" class="btn btn-outline-dark btn-sm btn-block" data-id="grid2">
-          <li class="text">grid2</li>
-        </a>
-
-        </ul>
+      
+      <div id="anjinglah" style="display: none;">
+        <div id="sceneList" >
+          <ul class="scenes"></ul>
+        </div>
       </div>
-
+    
     </div>
   </section>
   <!-- Penutup infocontainer -->
@@ -165,8 +159,9 @@
 
     <div id="bukatutup" style="display: none;">
       <div id="pano"></div>
-      <!-- back panorama -->
-      <img class="backpano" onclick="bukatutup()" src="img/back.png">
+       <!-- back panorama -->
+      <img class="backpano" onclick="bukatutup()" src="img/back.png"  >
+      
 
       <div id="titleBar">
         <h1 class="sceneName"></h1>
@@ -216,79 +211,69 @@
   <!-- DIBAWAH INI UDAH JAVASCRIPT SEMUA -->
 
 
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="dataset/360/index.js"></script>
+<script src="js/isipano.js"></script>
+<script src="js/drawing.js"> </script>
+<script src="js/maps.js"></script>
 
-  <script src="js/isipano.js"></script>
-  <script src="js/drawing.js"> </script>
-  <script src="js/maps.js"></script>
-
-  <script src="dataset/360/vendor/screenfull.min.js"></script>
-  <script src="dataset/360/vendor/bowser.min.js"></script>
-  <script src="dataset/360/vendor/marzipano.js"></script>
-
-
-
-  <script>
-    //BELOM  BERESZSZ
-    console.log('mulai');
-
-    // // Load JSON text from server hosted file and return JSON parsed object
-    // function loadJSON(filePath) {
-    //   // Load json file;
-    //   var json = loadTextFileAjaxSync(filePath, 'data.json');
-    //   // Parse json
-    //   return JSON.parse(json);
-    // }
-
-    // // Load text with Ajax synchronously: takes path to file and optional MIME type
-    // function loadTextFileAjaxSync(filePath, mimeType)
-    // {
-    //   var xmlhttp=new XMLHttpRequest();
-    //   xmlhttp.open("GET",filePath,false);
-    //   if (mimeType != null) {
-    //     if (xmlhttp.overrideMimeType) {
-    //       xmlhttp.overrideMimeType(mimeType);
-    //     }
-    //   }
-    //   xmlhttp.send();
-    //   if (xmlhttp.status==200 && xmlhttp.readyState == 4 )
-    //   {
-    //     return xmlhttp.responseText;
-    //   }
-    //   else {
-    //     // TODO Throw exception
-
-    //     return null;
-    //   }
-    // }
-
-    // loadJSON('data.json');
+<script src="dataset/360/vendor/screenfull.min.js"></script>
+<script src="dataset/360/vendor/bowser.min.js"></script>
+<script src="dataset/360/vendor/marzipano.js"></script>
 
 
-    // $.ajax({
-    //   url:'data.json',
-    //   success: results => {
-    //     const datascene = results.scenes;
-
-    //     let sceneName = '';
-    //     datascene.forEach(m=>{
-    //       sceneName +=`<a href="javascript:void(0)"class="scene" data-id="${m.id}"><li class="text">${m.name}</li></a>`;
-    //     });
-
-    //     $('.scenes').html(sceneName);
+<script >
+console.log('mulai');
 
 
-    //   },
-    //   error:(e)=>{
-    //     console.log('asd');
-    //   }
-    // });
+fetch('data.json')
+  .then (response => response.json())
+  .then (function(response){
+    const datascene = response.scenes;
+    let sceneName='';
+    datascene.forEach(m=>{
+          sceneName +=`<a href="javascript:void(0)"class="scene" data-id="${m.id}"><li class="text">${m.name}</li></a>`;   
+        });
+    const isidatasceneName = document.querySelector('.scenes');
+    isidatasceneName.innerHTML = sceneName;
+  })
 
-    // console.log('selesai');
-  </script>
+  .then (response => {
+    let script = document.createElement('script');
+    script.src = 'dataset/360/data.js';
+    document.head.appendChild(script);
+    })
 
-  <script src="dataset/360/data.js"></script>
-  <script src="dataset/360/index.js"></script>
+  // .then (response => {
+  //   let script = document.createElement('script');
+  //   script.src = 'dataset/360/index.js';
+  //   document.head.appendChild(script);
+  //   });
+
+
+// $.ajax({
+//   url:'data.json',
+//   success: results => {
+//     const datascene = results.scenes;
+
+//     let sceneName = '';
+//     datascene.forEach(m=>{
+//       sceneName +=`<a href="javascript:void(0)"class="scene" data-id="${m.id}"><li class="text">${m.name}</li></a>`;   
+//     }); 
+
+//     $('.scenes').html(sceneName);
+    
+
+//   },
+//   error:(e)=>{
+//     console.log('asd');
+//   }
+// });
+
+// console.log('selesai');
+
+</script>
+
 
   <div id="map"></div>
 

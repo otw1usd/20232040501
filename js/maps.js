@@ -56,6 +56,7 @@ var waktuOnScreen=0;
            var path = "./dataset/drone/" + element.value + "/";
            window.waktuOnScreen = element.value;
 
+
             imageMapType = new google.maps.ImageMapType({
                 getTileUrl: function(coord, zoom) {
                         /*if (zoom < 13 || zoom > 25 ||
@@ -76,6 +77,7 @@ var waktuOnScreen=0;
 
              map.overlayMapTypes.clear();
                map.overlayMapTypes.push(imageMapType);
+               marzipanoFunction();
 
 
 

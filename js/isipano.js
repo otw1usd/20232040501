@@ -1,8 +1,16 @@
 function bukatutup(){
-    var x = document.getElementById("bukatutup"); //cari cara biar id nya bisa refer ke yg diclick
-      if (x.style.display === "none") {
-        x.style.display = "block";
+    var okedekalogitu = document.getElementById("anjinglah");     
+    var x = document.getElementById("bukatutup"); 
+    
+      bukatutupmaster(x);
+      bukatutupmaster(okedekalogitu);
+  };
+
+
+  function bukatutupmaster(e){
+    if (e.style.display === "none") {
+        e.style.display = "block";
       } else {
-        x.style.display = "none";
+        e.style.display = "none";
       }
   };
