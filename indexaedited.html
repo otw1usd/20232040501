@@ -128,13 +128,13 @@
           </div>
         </div>
       </div>
-      
+
       <div id="anjinglah" style="display: none;">
-        <div id="sceneList" >
+        <div id="sceneList">
           <ul class="scenes"></ul>
         </div>
       </div>
-    
+
     </div>
   </section>
   <!-- Penutup infocontainer -->
@@ -159,9 +159,9 @@
 
     <div id="bukatutup" style="display: none;">
       <div id="pano"></div>
-       <!-- back panorama -->
-      <img class="backpano" onclick="bukatutup()" src="img/back.png"  >
-      
+      <!-- back panorama -->
+      <img class="backpano" onclick="bukatutup()" src="img/back.png">
+
 
       <div id="titleBar">
         <h1 class="sceneName"></h1>
@@ -211,68 +211,67 @@
   <!-- DIBAWAH INI UDAH JAVASCRIPT SEMUA -->
 
 
-<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-<script src="dataset/360/index.js"></script>
-<script src="js/isipano.js"></script>
-<script src="js/drawing.js"> </script>
-<script src="js/maps.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script src="dataset/360/index.js"></script>
+  <script src="js/isipano.js"></script>
+  <script src="js/drawing.js"> </script>
+  <script src="js/maps.js"></script>
 
-<script src="dataset/360/vendor/screenfull.min.js"></script>
-<script src="dataset/360/vendor/bowser.min.js"></script>
-<script src="dataset/360/vendor/marzipano.js"></script>
-
-
-<script >
-console.log('mulai');
+  <script src="dataset/360/vendor/screenfull.min.js"></script>
+  <script src="dataset/360/vendor/bowser.min.js"></script>
+  <script src="dataset/360/vendor/marzipano.js"></script>
 
 
-fetch('data.json')
-  .then (response => response.json())
-  .then (function(response){
-    const datascene = response.scenes;
-    let sceneName='';
-    datascene.forEach(m=>{
-          sceneName +=`<a href="javascript:void(0)"class="scene" data-id="${m.id}"><li class="text">${m.name}</li></a>`;   
+  <script>
+    console.log('mulai');
+
+
+    fetch('data.json')
+      .then(response => response.json())
+      .then(function(response) {
+        const datascene = response.scenes;
+        let sceneName = '';
+        datascene.forEach(m => {
+          sceneName += `<a href="javascript:void(0)"class="scene" data-id="${m.id}"><li class="text">${m.name}</li></a>`;
         });
-    const isidatasceneName = document.querySelector('.scenes');
-    isidatasceneName.innerHTML = sceneName;
-  })
+        const isidatasceneName = document.querySelector('.scenes');
+        isidatasceneName.innerHTML = sceneName;
+      })
 
-  .then (response => {
-    let script = document.createElement('script');
-    script.src = 'dataset/360/data.js';
-    document.head.appendChild(script);
-    })
+      .then(response => {
+        let script = document.createElement('script');
+        script.src = 'dataset/360/data.js';
+        document.head.appendChild(script);
+      })
 
-  // .then (response => {
-  //   let script = document.createElement('script');
-  //   script.src = 'dataset/360/index.js';
-  //   document.head.appendChild(script);
-  //   });
+    // .then (response => {
+    //   let script = document.createElement('script');
+    //   script.src = 'dataset/360/index.js';
+    //   document.head.appendChild(script);
+    //   });
 
 
-// $.ajax({
-//   url:'data.json',
-//   success: results => {
-//     const datascene = results.scenes;
+    // $.ajax({
+    //   url:'data.json',
+    //   success: results => {
+    //     const datascene = results.scenes;
 
-//     let sceneName = '';
-//     datascene.forEach(m=>{
-//       sceneName +=`<a href="javascript:void(0)"class="scene" data-id="${m.id}"><li class="text">${m.name}</li></a>`;   
-//     }); 
+    //     let sceneName = '';
+    //     datascene.forEach(m=>{
+    //       sceneName +=`<a href="javascript:void(0)"class="scene" data-id="${m.id}"><li class="text">${m.name}</li></a>`;
+    //     });
 
-//     $('.scenes').html(sceneName);
-    
+    //     $('.scenes').html(sceneName);
 
-//   },
-//   error:(e)=>{
-//     console.log('asd');
-//   }
-// });
 
-// console.log('selesai');
+    //   },
+    //   error:(e)=>{
+    //     console.log('asd');
+    //   }
+    // });
 
-</script>
+    // console.log('selesai');
+  </script>
 
 
   <div id="map"></div>
