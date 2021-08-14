@@ -15,11 +15,14 @@
  */
 'use strict';
 
-(function() {
+
+function marzipanoFunction() {
+  var waktu = window.waktuOnScreen;
   var Marzipano = window.Marzipano;
   var bowser = window.bowser;
   var screenfull = window.screenfull;
   var data = window.APP_DATA;
+  
 
   // Grab elements from DOM.
   var panoElement = document.querySelector('#pano');
@@ -72,7 +75,8 @@
 
   // Create scenes.
   var scenes = data.scenes.map(function(data) {
-    var urlPrefix = "dataset/360/tiles";
+    
+    var urlPrefix = "dataset/360/tiles/"+waktu;
     var source = Marzipano.ImageUrlSource.fromString(
       urlPrefix + "/" + data.id + "/{z}/{f}/{y}/{x}.jpg",
       { cubeMapPreviewUrl: urlPrefix + "/" + data.id + "/preview.jpg" });
@@ -150,7 +154,7 @@
   scenes.forEach(function(scene) {
     var el = document.querySelector('#sceneList .scene[data-id="' + scene.data.id + '"]');
     el.addEventListener('click', function() {
-      switchScene(scene);
+       switchScene(scene);
       // On mobile, hide scene list after selecting a scene.
       if (document.body.classList.contains('mobile')) {
         hideSceneList();
@@ -390,4 +394,9 @@
   // Display the initial scene.
   switchScene(scenes[0]);
 
-})();
+};
+
+
+let waktu = window.waktuOnScreen;
+console.log(waktu);
+
