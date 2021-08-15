@@ -335,9 +335,10 @@ body.fullscreen-enabled.mobile #agentbutton {
 
 
 #sceneList {
-  position: absolute;
-  left: 0;
-  width: 100%;
+  position: fixed;
+  top: 80%;
+  left: -220px;
+  width: 220px;
   max-height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
@@ -362,7 +363,7 @@ body.fullscreen-enabled.mobile #agentbutton {
 }
 
 .mobile #sceneList.enabled {
-  margin-left: 0;
+  margin-left: 100%;
 }
 
 .mobile #sceneList .scenes {
@@ -370,7 +371,7 @@ body.fullscreen-enabled.mobile #agentbutton {
 }
 
 #sceneList.enabled {
-  margin-left: 0;
+  margin-left: 220px;
 }
 
 #sceneList .scene {
@@ -878,10 +879,6 @@ body.view-control-buttons .viewControlButton {
   body.view-control-buttons .viewControlButton {
     display: none;
   }
-}
-
-.scenes {
-  padding-left: 0;
 }
 
 .viewControlButton .icon {
